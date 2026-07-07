@@ -1,0 +1,62 @@
+.container {
+    display: flex;
+    height: 45.5rem;
+    width: 76.25rem;
+    gap: 1.25rem;
+
+}
+
+body {
+    background: var(--shape-body);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+
+aside {
+    position: relative;
+
+    & .banner {
+        width: 33%;
+        object-fit: cover;
+    }
+
+    h1 {
+        position: absolute;
+        height: 9rem;
+        left: 2rem;
+        right: 2rem;
+        top: 6rem;
+        font: var(--text-logo-leckerlione);
+        color: var(--pink);
+    }
+
+    h2 {
+        font: var(--text-body-md-opensans);
+        color: var(--text-heading);
+        position: absolute;
+        height: 9rem;
+        left: 2rem;
+        right: 2rem;
+        top: 9.6rem;
+    }
+
+    & .icon {
+        position: absolute;
+        height: 9rem;
+        left: 2rem;
+        right: 2rem;
+        top: 2rem;
+        width: 2.86rem;
+        height: 3rem;
+    }
+
+}
+
+main {
+    & .form {
+        width: 67%;
+    }
+}
