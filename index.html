@@ -23,17 +23,57 @@
                 <h2>Crie um convite digital para o seu evento</h2>
             </div>
         </aside>
-        <main>
-            <div class="form">
-                <fieldset class="about">
-                    <strong>Crie seu convite</strong>
-                    <figure>
-                        <img src="assets/icons/calendar.png" alt="Calendario">
-                        <figcaption>Sobre o evento</figcaption>
-                    </figure>
+        <main class="main-container">
+            <fieldset class="about">
+                <strong>Crie seu convite</strong>
+                <figure>
+                    <img src="assets/icons/calendar.png" alt="Calendario">
+                    <figcaption>Sobre o evento</figcaption>
+                </figure>
+                <div class="title">
+                    <label for="titulo">Título</label>
+                    <input type="text" id="titulo" name="titulo" placeholder="Nome do evento">
+                </div>
+                <div class="flex-1">
+                    <div class="start">
+                        <label for="inicio">Início</label>
+                        <input type="datetime-local" id="inicio" name="inicio">
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div class="end">
+                        <label for="fim">Fim</label>
+                        <input type="datetime-local" id="fim" name="fim">
+                    </div>
+                </div>
+                <div>
 
-                </fieldset>
-            </div>
+                    <div class="toggle">
+                        <input type="radio" name="tipo" id="presencial" checked>
+                        <label for="presencial">
+                            <img src="./assets/icons/building.svg" alt="">
+                            <span>Presencial</span>
+                        </label>
+
+                        <input type="radio" name="tipo" id="online">
+                        <label for="online">
+                            <img src="./assets/icons/video.svg" alt="">
+                            <span>Online</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="flex-1">
+                    <div class="local">
+                        <label for="local">Local</label>
+                        <input type="text" id="local" name="local" placeholder="Link ou endereço">
+                    </div>
+                </div>
+                <div class="description">
+                    <label for="descricao">Local</label>
+                    <input type="text" id="descricao" name="descricao" placeholder="Link ou endereço">
+                </div>
+            </fieldset>
+
 
         </main>
 
