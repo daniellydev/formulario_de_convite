@@ -1,0 +1,60 @@
+#app {
+    display: grid;
+    grid-template-columns: 40% 50%;
+    height: 100vh;
+    overflow: hidden;
+    gap: 1.25rem;
+    
+}
+
+body {
+    background: var(--shape-background);
+
+}
+
+aside {
+    
+
+    img { 
+        position: relative;
+        border-radius: 0.75rem;
+    }
+    
+    & .icon {
+
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        left: 2rem;
+        width: 2.86rem;
+        height: 3rem;
+    }
+    h1 {
+        position: absolute;
+        font: var(--text-logo-leckerlione);
+        color: var(--pink);
+        top: 6rem;
+        right: 2rem;
+        height: 9rem;
+        left: 2rem;
+    }
+
+    h2 {
+        position: absolute;
+        font: var(--text-body-md-opensans);
+        color: var(--text-heading);
+        top: 9.6rem;
+        right: 2rem;
+        left: 2rem;
+    }
+
+}
+
+main {
+    overflow: auto;
+
+    & .main-container {
+
+        
+    }
+}
