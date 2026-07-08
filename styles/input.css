@@ -16,7 +16,7 @@ strong {
     color: var(--text-heading);
 }
 
-.calendar {
+.icons {
     display: flex;
     align-items: center;
     gap: .75rem;
