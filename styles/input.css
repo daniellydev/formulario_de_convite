@@ -1,17 +1,17 @@
-input,
+input[type="text"],
 textarea {
   appearance: none;
   width: 100%;
   border-radius: 0.5rem;
-  border: 1px solid var(--input-stroke);
+  border: 0.0625rem solid var(--input-stroke);
   background-color: var(--input-base);
 
   padding: 0.81rem 1rem;
   font: var(--text-body-md-opensans);
   color: var(--input-placeholder);
 }
-input{
-    height: 3rem;
+input {
+  height: 3rem;
 }
 strong {
   font: var(--text-heading-md-baloo2);
@@ -36,94 +36,280 @@ form {
 }
 
 .input-wrapper {
-    margin-top: 1rem;
-    
+  margin-top: 1rem;
+
   label {
     display: inline-block;
     font: var(--text-body-sm-opensans);
     color: var(--text-body);
     margin-bottom: 0.75rem;
-    
   }
 }
 
-fieldset div:not(.input-wrapper, .segmented-control){
-    display: flex;
-    gap: 1rem;
+fieldset div:not(.input-wrapper, .segmented-control) {
+  display: flex;
+  gap: 1rem;
 
-    .input-wrapper {
-       width: 50%;
-    }
-
-
+  .input-wrapper {
+    width: 50%;
+  }
 }
 
 .segmented-control {
-    position: relative;
+  position: relative;
+  display: flex;
+  padding: 0.25rem;
+  background-color: var(--input-base);
+  gap: 0.25rem;
+  border-radius: 0.5rem;
+  height: 3rem;
+  z-index: 2;
+  .indicator {
+    position: absolute;
+    height: calc(100% - 8px);
+    width: calc(50% - 4px);
+
+    top: 0.25rem;
+    left: 0.25rem;
+    background-color: var(--shape-button);
+    border-radius: 0.3125rem;
+    z-index: -1;
+    transition: 250ms;
+  }
+
+  &:has(label:first-child input:checked) .indicator {
+    left: 0.25rem;
+  }
+  &:has(label:last-child input:checked) .indicator {
+    left: 50%;
+  }
+
+  label {
     display: flex;
-    padding: .25rem;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    margin-bottom: 0;
+
+    svg {
+      height: 1rem;
+      width: 1rem;
+      margin-right: 0.5rem;
+      transition: 250ms;
+      path {
+        fill: var(--input-placeholder);
+      }
+    }
+
+    input {
+      all: unset;
+    }
+
+    span {
+      font: var(--text-body-sm-opensans);
+      color: var(--text-body);
+      transition: 250ms;
+    }
+    &:has(input:checked) {
+      svg path {
+        fill: var(--brand-light);
+      }
+      span {
+        color: var(--text-heading);
+      }
+    }
+  }
+}
+
+.input-wrapper-flex {
+  display: flex;
+  gap: 1.125rem;
+}
+
+.input-color-wrapper {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 62.4375rem;
+  cursor: pointer;
+  border: 0.375rem solid var(--shape-button);
+
+  &:hover {
+    border-color: var(--shape-hover);
+  }
+
+  input {
+    all: unset;
+  }
+
+  &.azul {
+    background-color: var(--brand-light);
+  }
+
+  &.azul-escuro {
+    background-color: var(--navy);
+  }
+
+  &.roxo {
+    background-color: var(--purple);
+  }
+
+  &.rosa {
+    background-color: var(--fuschia);
+  }
+
+  &.coral {
+    background-color: var(--pink);
+  }
+
+  &.vermelho {
+    background-color: var(--danger);
+  }
+
+  &.laranja {
+    background-color: var(--orange);
+  }
+
+  &.amarelo {
+    background-color: var(--yellow);
+  }
+
+  &.neon {
+    background-color: var(--lime);
+  }
+
+  &.verde {
+    background-color: var(--green);
+  }
+
+  &.turquesa {
+    background-color: var(--cyan);
+  }
+
+  &:has(input:checked) {
+    outline: 0.125rem solid var(--brand-light);
+  }
+}
+
+.event-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  .event {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.25rem 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    border: 0.0625rem solid var(--input-stroke);
+    cursor: pointer;
+    background-color: var(--shape-button);
+
+    input {
+      all: unset;
+    }
+    span {
+      margin-top: 0.5rem;
+    }
+
+    &:hover {
+      background-color: var(--shape-hover);
+    }
+    &:has(input:checked) {
+      outline: 0.125rem solid var(--brand-light);
+    }
+  }
+}
+.theme {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  input {
+    all: unset;
+    display: none;
+  }
+
+  span {
+    font: var(--text-body-sm-opensans);
+    color: var(--text-heading);
+  }
+
+  .switch {
+    position: relative;
+    width: 4rem;
+    height: 2rem;
+    border-radius: 62.4375rem;
+    cursor: pointer;
     background-color: var(--input-base);
-    gap: .25rem;
-    border-radius: .5rem;
-    height: 3rem;
-    z-index: 2;
-     .indicator{
-        position: absolute;
-        height: calc(100% - .50rem);
-        width: calc(50% - .25rem);
-   
-        top: 0.25rem;
-        left: 0.25rem;
-        background-color: var(--shape-button);
-        border-radius:.3125rem ;
-        z-index: -1;
-        transition: 250ms;
-    }
+    border: 0.0625rem solid var(--input-stroke);
+    transition: 0.3s;
+    margin-bottom: 0px;
+  }
 
-    &:has(label:first-child input:checked) .indicator{
-        left: 0.25rem;
-    }
- &:has(label:last-child input:checked) .indicator{
-        left: 50%;
-    }
+  .slider {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--input-stroke);
+    border-radius: 50%;
+    position: absolute;
+    top: 0.1875rem;
+    left: 0.1875rem;
+    transition: 0.3s;
+  }
 
-    label{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 50%;
-        height: 100%;
-        margin-bottom: 0;
-      
-        svg {
-            height: 1rem;
-            width: 1rem;
-            margin-right: .5rem;
-            transition: 250ms;
-            path {
-                fill: var(--input-placeholder);
-            }
-        }
-        
-        input{
-            all: unset;
-        }
+  .light {
+    display: none;
+  }
 
-        span{
-            font: var(--text-body-sm-opensans);
-            color: var(--text-body);
-            transition: 250ms;
-        }
-        &:has(input:checked) {
-            svg path{
-                fill: var(--brand-light);
-            }
-            span{
-                color: var(--text-heading);
-            }
-        }
-    }
+  &:has(#estilo:checked) .light {
+    display: flex;
+  }
 
-   
+  &:has(#estilo:checked) .dark {
+    display: none;
+  }
+
+  #estilo:checked + .switch .slider {
+    transform: translateX(2rem);
+    background-color: var(--text-heading);
+  }
+
+  #estilo:checked + .switch {
+    background-color: var(--brand-light);
+  }
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.upload {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  .button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    padding: 0.625rem 1rem;
+
+    background: var(--shape-button);
+    color: white;
+
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  span {
+    font: var(--text-body-md-opensans);
+    color: var(--input-placeholder);
+  }
+
+  .button:hover {
+    background: #3a404d;
+  }
 }
 
